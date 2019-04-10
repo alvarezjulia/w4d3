@@ -1,8 +1,14 @@
 var express = require('express')
 var app = express()
 
-app.get('/', (req, res) => {
-    res.send('Hello World')
+app.use(express.static('public'))
+
+app.get('/', (request, response) => {
+    response.send('Hello World')
+})
+
+app.get('/photo', (request, response) => {
+    response.send('<img src="/photo.jpg">')
 })
 
 app.listen(3000)
