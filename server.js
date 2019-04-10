@@ -7,8 +7,13 @@ app.get('/', (request, response) => {
     response.send('Hello World')
 })
 
+//ADDING PHOTO WRITING MANUALLY HTML
+// app.get('/photo', (request, response) => {
+//     response.send('<img src="/photo.jpg">')
+// })
+
 app.get('/photo', (request, response) => {
-    response.send('<img src="/photo.jpg">')
+    response.sendFile(`${__dirname}/public/photo.html`)
 })
 
 app.listen(3000)
